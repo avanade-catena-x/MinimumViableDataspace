@@ -9,7 +9,7 @@ services:
         JVM_ARGS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
     environment:
       IDS_WEBHOOK_ADDRESS: http://company1:8282
-      EDC_SAMPLES_TRANSFER_01_ASSET_PATH: /exchange/test-document.txt
+      EDC_SAMPLES_TRANSFER_01_ASSET_PATH: /exchange/test-document-local.txt
       EDC_CONNECTOR_NAME: company1
       EDC_IDENTITY_DID_URL: did:web:did-server:company1
       EDC_VAULT: /resources/vault/company1/company1-vault.properties

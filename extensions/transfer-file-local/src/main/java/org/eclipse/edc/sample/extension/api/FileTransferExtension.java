@@ -90,19 +90,22 @@ public class FileTransferExtension implements ServiceExtension {
                 .property("filename", assetPath.getFileName().toString())
                 .build();
 
-        var assetId = "test-document";
-        var asset = Asset.Builder.newInstance().id(assetId).build();
+        var assetId = "test-document-local";
+        var asset = Asset.Builder.newInstance().id(assetId)
+                .contentType("text/plain")
+                .property("asset:prop:type", "File").version("1.0")
+                .name("test-document-local-compony1").build();
 
         assetIndex.accept(asset, dataAddress);
     }
 
     private void registerContractDefinition(String uid) {
         var contractDefinition = ContractDefinition.Builder.newInstance()
-                .id("1")
+                .id("4a75736e-001d-4365-8bd4-9888490edb53")
                 .accessPolicyId(uid)
                 .contractPolicyId(uid)
                 .selectorExpression(AssetSelectorExpression.Builder.newInstance()
-                        .whenEquals(Asset.PROPERTY_ID, "test-document")
+                        .whenEquals(Asset.PROPERTY_ID, "test-document-local")
                         .build())
                 .validity(31536000) //valid for a year
                 .build();
