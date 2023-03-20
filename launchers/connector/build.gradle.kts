@@ -23,7 +23,7 @@ val edcGroup: String by project
 dependencies {
     implementation(project(":extensions:refresh-catalog"))
     implementation(project(":extensions:policies"))
-    implementation(project(":extensions:transfer-file-local"))
+//    implementation(project(":extensions:transfer-file-local"))
 
 
     implementation(edc.core.controlplane)
